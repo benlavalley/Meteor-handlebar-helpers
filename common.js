@@ -1,3 +1,5 @@
+import { Tracker } from 'meteor/tracker';
+
 // Helper scope
 if (typeof Helpers === 'undefined') {
   Helpers = {};
@@ -13,7 +15,7 @@ var languageText = {};
 // getText('Say.Hello.To.Me') == 'Say Hello To Me:)'; // camelCase
 // getText('SAy.hello.to.me') == 'Say hello To me:)'; // ignore case sensitivity
 
-var _languageDeps = (Meteor.isClient) ? new Deps.Dependency() : null;
+var _languageDeps = (Meteor.isClient) ? new Tracker.Dependency() : null;
 var currentLanguage = 'en';
 
 // language = 'en'

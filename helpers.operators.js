@@ -93,7 +93,7 @@ if (typeof UI !== 'undefined') {
       var langKey = lang || null;
       return Helpers.getText(text, langKey);
     });
-    
+
   UI.registerHelper("$mapped", function(arr) {
     if(!Array.isArray(arr)){
       try {
@@ -104,9 +104,9 @@ if (typeof UI !== 'undefined') {
         return [];
       }
     }
-    
+
     var $length = arr.length;
-    
+
     var mappedArray = arr.map(function(item,index) {
       item.$length = $length;
       item.$index = index;
@@ -114,10 +114,10 @@ if (typeof UI !== 'undefined') {
       item.$last  = index === $length-1;
       return item;
     });
-    
+
     return mappedArray || [];
   });
-  
+
     // UI.registerHelper('userRole', function ( /* arguments */) {
     //   var role = Session.get('currentRole');
     //   return _.any(arguments, function(value) { return (value == role); });
@@ -137,7 +137,7 @@ if (typeof UI !== 'undefined') {
       delete UI._globalHelpers[name];
       delete Helpers.superScope[name];
     };
-    
+
     Helpers.addScope('Session', Session);
     Helpers.addScope('Meteor', Meteor);
 
