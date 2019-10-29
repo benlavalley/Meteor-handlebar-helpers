@@ -9,7 +9,8 @@ Package.onUse(function (api) {
 	api.versionsFrom('1.8.1');
 
 	// Spark engine requires 'handlebars', Meteor UI requires 'templating'
-	api.use([
+  api.use('ecmascript', ['client', 'server']);
+  api.use([
 		'ui',
 		'session', // we add Session to the helper scope
 		'tracker',
